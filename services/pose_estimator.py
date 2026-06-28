@@ -18,8 +18,8 @@ class PoseEstimator:
         self._mp_pose = mp.solutions.pose
         self._pose = self._mp_pose.Pose(
             static_image_mode=True,
-            model_complexity=2,
-            smooth_landmarks=True,
+            model_complexity=1,
+            smooth_landmarks=False,
             enable_segmentation=False,
             min_detection_confidence=0.5,
         )
