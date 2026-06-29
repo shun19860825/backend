@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import measurements
+from routers import analysis, measurements
 
 app = FastAPI(
     title="Body Measurement API",
@@ -17,6 +17,7 @@ app.add_middleware(
 )
 
 app.include_router(measurements.router, prefix="/api/v1")
+app.include_router(analysis.router, prefix="/api/v1/analysis")
 
 
 @app.get("/health")
